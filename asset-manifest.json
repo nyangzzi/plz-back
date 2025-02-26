@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/plz-back/static/css/main.d38ecc70.css",
-    "main.js": "/plz-back/static/js/main.62413462.js",
+    "main.css": "/plz-back/static/css/main.e34766d9.css",
+    "main.js": "/plz-back/static/js/main.a80ba442.js",
     "static/js/453.5ae24ad8.chunk.js": "/plz-back/static/js/453.5ae24ad8.chunk.js",
     "static/media/Pretendard-SemiBold.otf": "/plz-back/static/media/Pretendard-SemiBold.4b3283bc0e29a9c97c11.otf",
     "static/media/Pretendard-Bold.otf": "/plz-back/static/media/Pretendard-Bold.4e72d46e664b88a6b5c8.otf",
@@ -16,12 +16,12 @@
     "static/media/image_back_black.png": "/plz-back/static/media/image_back_black.b0418153612fea7a928f.png",
     "static/media/icon_refresh.svg": "/plz-back/static/media/icon_refresh.b11fc0432e2ccd21d562bd8c2fcdac69.svg",
     "index.html": "/plz-back/index.html",
-    "main.d38ecc70.css.map": "/plz-back/static/css/main.d38ecc70.css.map",
-    "main.62413462.js.map": "/plz-back/static/js/main.62413462.js.map",
+    "main.e34766d9.css.map": "/plz-back/static/css/main.e34766d9.css.map",
+    "main.a80ba442.js.map": "/plz-back/static/js/main.a80ba442.js.map",
     "453.5ae24ad8.chunk.js.map": "/plz-back/static/js/453.5ae24ad8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d38ecc70.css",
-    "static/js/main.62413462.js"
+    "static/css/main.e34766d9.css",
+    "static/js/main.a80ba442.js"
   ]
 }
