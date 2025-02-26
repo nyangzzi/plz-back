@@ -1,0 +1,63 @@
+@import "./styles/ColorThemes.scss";
+@import "./styles//FontStyle.scss";
+
+.App {
+  text-align: center;
+}
+
+.content-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: var(--surface);
+  align-content: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 12px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  max-width: 375px;
+  background: var(--background);
+  color: var(--on-background);
+
+  .title {
+    @extend .pretendard-semibold-24;
+  }
+
+  .explain {
+    @extend .pretendard-regular-14;
+    color: var(--on-surface);
+  }
+
+}
+
+.color-btn-list {
+  display: flex;
+  gap: 8px;
+  align-self: flex-end;
+ margin-bottom: 24px;
+}
+
+.color-theme-btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  margin: 0;
+  background: var(--background);
+  border: 1px solid var(--outline);
+  border-radius: 50%;
+  cursor: pointer;
+
+  &.selected {
+    border: 3px solid var(--primary);
+  }
+}

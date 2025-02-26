@@ -1,0 +1,53 @@
+$common-teal: #00A5B9;
+$common-white: #FFFFFF;
+$common-light-gray: #D8DBDF;
+$common-gray: #888888;
+$common-dark-gray: #555555;
+$common-black: #222222;
+
+:root {
+  --common-teal: #{$common-teal};
+  --common-white: #{$common-white};
+  --common-light-gray: #{$common-light-gray};
+  --common-gray: #{$common-gray};
+  --common-dark-gray: #{$common-dark-gray};
+  --common-black: #{$common-black};
+}
+
+.dark-theme {
+  --primary: var(--common-teal);
+  --on-primary: var(--common-white);
+  
+  --primary-container: rgba(#{red($common-teal)}, #{green($common-teal)}, #{blue($common-teal)}, 0.05);
+  --on-primary-container: var(--common-black);
+
+  --surface: var(--common-dark-gray);
+  --on-surface: var(--common-gray);
+
+  --surface-container: var(--common-black);
+  --on-surface-container: var(--common-light-gray);
+  
+  --background: var(--common-black);
+  --on-background: var(--common-white);
+
+  --outline: var(--common-light-gray);
+}
+
+.light-theme {
+  --primary: var(--common-teal);
+  --on-primary: var(--common-white);
+  
+  --primary-container: rgba(#{red($common-teal)}, #{green($common-teal)}, #{blue($common-teal)}, 0.05);
+  --on-primary-container: var(--common-black);
+
+  --surface: var(--common-light-gray);
+  --on-surface: var(--common-gray);
+
+  --surface-container: var(--common-white);
+  --on-surface-container: var(--common-dark-gray);
+  
+  --background: var(--common-white);
+  --on-background: var(--common-black);
+
+  --outline: var(--common-dark-gray);
+}
