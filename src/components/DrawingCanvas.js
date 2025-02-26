@@ -98,8 +98,14 @@ const DrawingCanvas = ({ imageSrc, enabled, isClear, setClear }) => {
 
   // 그리기 시작
   const startDrawing = (e) => {
+    const { offsetX, offsetY } = getPosition(e);
     setIsDrawing(true);
-    setLastPosition({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
+    setLastPosition({ x: offsetX, y: offsetY });
+
+    // 터치로 그릴 때 스크롤 방지
+    if (e.touches) {
+      e.preventDefault();
+    }
   };
 
   // 그리기 종료
@@ -111,7 +117,7 @@ const DrawingCanvas = ({ imageSrc, enabled, isClear, setClear }) => {
   const draw = (e) => {
     if (!isDrawing || !enabled) return;
     const ctx = canvasRef.current.getContext('2d');
-    const { offsetX, offsetY } = e.nativeEvent;
+    const { offsetX, offsetY } = getPosition(e);
 
     ctx.lineWidth = 4;
     ctx.lineCap = 'round';
@@ -123,7 +129,46 @@ const DrawingCanvas = ({ imageSrc, enabled, isClear, setClear }) => {
     ctx.stroke();
 
     setLastPosition({ x: offsetX, y: offsetY });
+
+    // 터치로 그릴 때 스크롤 방지
+    if (e.touches) {
+      e.preventDefault();
+    }
   };
+
+  // 터치와 마우스 이벤트의 공통된 처리 함수
+  const getPosition = (e) => {
+    const rect = canvasRef.current.getBoundingClientRect();
+    let offsetX = 0;
+    let offsetY = 0;
+
+    if (e.touches) {
+      offsetX = e.touches[0].clientX - rect.left;
+      offsetY = e.touches[0].clientY - rect.top;
+    } else {
+      offsetX = e.nativeEvent.offsetX;
+      offsetY = e.nativeEvent.offsetY;
+    }
+
+    return { offsetX, offsetY };
+  };
+
+  // 페이지 스크롤 방지 (그리기 중)
+  useEffect(() => {
+    const preventDefault = (e) => {
+      if (isDrawing) {
+        e.preventDefault();
+      }
+    };
+
+    document.body.addEventListener('touchmove', preventDefault, { passive: false });
+    document.body.addEventListener('mousemove', preventDefault, { passive: false });
+
+    return () => {
+      document.body.removeEventListener('touchmove', preventDefault);
+      document.body.removeEventListener('mousemove', preventDefault);
+    };
+  }, [isDrawing]);
 
   return (
     <div className="canvas-parent" ref={containerRef}>
@@ -134,6 +179,9 @@ const DrawingCanvas = ({ imageSrc, enabled, isClear, setClear }) => {
         onMouseUp={stopDrawing}
         onMouseOut={stopDrawing}
         onMouseMove={draw}
+        onTouchStart={startDrawing}
+        onTouchEnd={stopDrawing}
+        onTouchMove={draw}
       />
     </div>
   );

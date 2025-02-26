@@ -34,7 +34,7 @@ function App() {
           </div>
 
           <div className='title'>내 등을 부탁해!</div>
-          <div className='explain'>{`긁고 싶은 영역을 선택한 뒤 친구에게 보여주세요 ٩( ᐛ )و`}</div>
+          <div className='explain'>{`가려운 부분을 표시한 뒤 친구에게 보여주세요 ٩( ᐛ )و`}</div>
 
           <button className='clear-button' onClick={() => onClear()}>
             <IconRefresh className='img' />
@@ -44,7 +44,7 @@ function App() {
           <DrawingCanvas imageSrc={ImageBackLight} enabled={enabled} isClear={isClear} setClear={setClear} />
 
           <button className='bottom-button' onClick={() => setEnabled((prev) => !prev)}>
-            {enabled ? "완료" : "다시하기"}
+            {enabled ? "완료!" : "다시하기"}
           </button>
 
         </div>
