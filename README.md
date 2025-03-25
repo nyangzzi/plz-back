@@ -10,9 +10,9 @@
 
 가려운 부분을 그림으로 그린 뒤 완료 버튼을 클릭하고 친구에게 보여주면 끝!
 <div>
-  <img width="300" alt="image" src="https://github.com/user-attachments/assets/8cf44049-1813-4dec-8519-965ae466553a" />
-  <img width="300" alt="Image" src="https://github.com/user-attachments/assets/4df13f18-378a-4081-8401-b090a93cb327" />
-  <img width="300" alt="image" src="https://github.com/user-attachments/assets/b336eb8d-1175-4a75-85db-2d455ad7e201" />
+  <img width="280" alt="image" src="https://github.com/user-attachments/assets/8cf44049-1813-4dec-8519-965ae466553a" />
+  <img width="280" alt="Image" src="https://github.com/user-attachments/assets/4df13f18-378a-4081-8401-b090a93cb327" />
+  <img width="280" alt="image" src="https://github.com/user-attachments/assets/b336eb8d-1175-4a75-85db-2d455ad7e201" />
 </div>
 
 #### 🌓 라이트&다크 버전이 제공됩니다
